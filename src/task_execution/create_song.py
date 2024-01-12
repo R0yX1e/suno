@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-import seleniumwire.undetected_chromedriver.v2 as uc
+import undetected_chromedriver as uc
 
 SUNO_URL = "https://app.suno.ai/create/"
 
@@ -19,4 +19,3 @@ def create_song(custom_mode, key, style=None, title=None):
             driver.find_element(by=By.XPATH, value='/html/body/div[1]/div[1]/div/div/div/div[1]/div[2]/div/div[3]/input').send_keys(title)
     else:
         driver.find_element(by=By.XPATH, value='/html/body/div[1]/div[1]/div/div/div/div[1]/div[2]/div[2]/textarea').send_keys(key)
-        driver.requests

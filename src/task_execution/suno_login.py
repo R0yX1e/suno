@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-import seleniumwire.undetected_chromedriver.v2 as uc
+import undetected_chromedriver as uc
 
 SUNO_URL = "https://app.suno.ai/"
 
