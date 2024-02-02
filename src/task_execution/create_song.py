@@ -19,3 +19,5 @@ def create_song(custom_mode, key, style=None, title=None):
             driver.find_element(by=By.XPATH, value='/html/body/div[1]/div[1]/div/div/div/div[1]/div[2]/div/div[3]/input').send_keys(title)
     else:
         driver.find_element(by=By.XPATH, value='/html/body/div[1]/div[1]/div/div/div/div[1]/div[2]/div[2]/textarea').send_keys(key)
+    driver.get_log('client')
+

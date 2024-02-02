@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-import undetected_chromedriver as uc
+import seleniumwire.undetected_chromedriver.v2 as uc
 
 GOOGLE_LOGIN_URL = "https://accounts.google.com/signin"
 
