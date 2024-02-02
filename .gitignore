@@ -1,3 +1,4 @@
 .DS_Store
 tests/
 test*
+__pycache__/
