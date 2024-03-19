@@ -2,6 +2,7 @@ from typing import List, Optional
 from enum import Enum
 from pydantic import BaseModel
 from fastapi import FastAPI, HTTPException
+import asyncio
 
 # Account information type definition.
 class Account(BaseModel):
@@ -45,19 +46,34 @@ class QueryOptions(BaseModel):
     wholeSong: bool
 
 # SongCreatorService class definition with FastAPI routes.
-app = FastAPI()
+async def lifespan():
+    
+
+app = FastAPI(lifespan=lifespan)
+TaskList = asyncio.Queue()
+
 
 @app.post("/create_song/")
 async def create_song(options: CreateSongOptions):
     # Placeholder for the actual implementation.
-    raise HTTPException(status_code=501, detail="Method not implemented.")
+    try:
+        TaskList.put(options)
+    except:
+        raise HTTPException(status_code=501, detail="Method not implemented.")
 
 @app.get("/query_song/{id}")
 async def query_song(id: str, wholeSong: bool):
     # Placeholder for the actual implementation.
-    raise HTTPException(status_code=501, detail="Method not implemented.")
+    try:
+        pass
+    except:
+        raise HTTPException(status_code=501, detail="Method not implemented.")
 
 @app.get("/query_balance/")
 async def query_balance():
     # Placeholder for the actual implementation.
-    raise HTTPException(status_code=501, detail="Method not implemented.")
+    try:
+        pass
+    except:
+        raise HTTPException(status_code=501, detail="Method not implemented.")
+

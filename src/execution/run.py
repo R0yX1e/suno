@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-class login:
+class Login:
     def __init__(self,driver) -> None:
         self.driver = driver
 
@@ -19,12 +19,14 @@ class login:
         self.driver.find_element(by=By.XPATH, value='//*[@id="passwordNext"]/div/button/span').click()
 
 
-class create:
+class Creation:
     def __init__(self,driver) -> None:
         self.driver = driver
 
     def create_song(self,custom_mode, key, style=None, title=None):
         if custom_mode:
+            self.driver.find_element(by=By.XPATH, value='/html/body/div[1]/div[1]/div/div/div/div[1]/div[1]/div[1]/label/span').click()
+
             self.driver.find_element(by=By.XPATH, value='/html/body/div[1]/div[1]/div/div/div/div[1]/div[2]/div/div[1]/div[2]/textarea').send_keys(key)
 
             if style != None:

@@ -1,4 +1,4 @@
-import server_api
+import server_api.api
 
 min_credits = 5 # price
 
