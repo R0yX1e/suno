@@ -47,7 +47,7 @@ class QueryOptions(BaseModel):
 
 # SongCreatorService class definition with FastAPI routes.
 async def lifespan():
-    
+    pass
 
 app = FastAPI(lifespan=lifespan)
 TaskList = asyncio.Queue()
