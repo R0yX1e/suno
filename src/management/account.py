@@ -1,5 +1,3 @@
-import server_api.api
-
 min_credits = 5 # price
 
 class Account_manager:

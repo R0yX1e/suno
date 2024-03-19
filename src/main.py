@@ -3,6 +3,8 @@ from enum import Enum
 from pydantic import BaseModel
 from fastapi import FastAPI, HTTPException
 import asyncio
+from execution.selenium_suno import Login, Creation
+from management.task import start_chrome
 
 # Account information type definition.
 class Account(BaseModel):
@@ -46,7 +48,9 @@ class QueryOptions(BaseModel):
     wholeSong: bool
 
 # SongCreatorService class definition with FastAPI routes.
-async def lifespan():
+    
+async def lifespan(app: FastAPI):
+    yield
     pass
 
 app = FastAPI(lifespan=lifespan)
